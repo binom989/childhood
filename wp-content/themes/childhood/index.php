@@ -504,6 +504,7 @@
             </div>
         </div>
 
+
 <?php
     function print_hello($text, $name) {
         echo 'Hello World!' . $text . ' ' . $name;
@@ -513,7 +514,21 @@
 
     do_action( 'my_hook', 'dear customer', 'Ivan' );
 
+    function my_filter_function ($str) {
+        return 'Hello ' . $str;
+    };
+
+    add_filter( 'my_filter', 'my_filter_function' );
+
+    echo apply_filters( 'my_filter', 'World' );  // выводим на экран
+
 ?>
+
+
+<?php
+
+?>
+
 
 
 <?php
